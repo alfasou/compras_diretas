@@ -94,8 +94,8 @@
                         </select>
                       </div>
 <?php
-$condorgao=" WHERE status = 1 " ;
-$sqlorgao=Selecionar("unidade", $condorgao, $conecta);
+$condorgao=" group by nome_gestora ";
+$sqlorgao=Selecionar("stg_empenho_itens", $condorgao, $conecta);
 
 ?>
                       <div class="input-group mb-3">
@@ -103,12 +103,11 @@ $sqlorgao=Selecionar("unidade", $condorgao, $conecta);
                         <select class="form-select" id="orgao" name= "orgao">
                           <?php
                           foreach($sqlorgao[0] as $res):
-                            $unidade= $res['nome'];
-                            $gestora= $res['id_gestora'];
+$unidade= $res['nome_gestora'];
 
                 
                           ?>
-                          <option value="<?=$gestora?>" selected><?=mb_strtoupper($unidade, 'UTF-8')?></option>
+                          <option value="<?=$unidade?>" selected><?=mb_strtoupper($unidade, 'UTF-8')?></option>
 
                           <?php endforeach;?>
                           <!--<option value="sma" selected>Administra&ccedil;&atilde;o</option>
@@ -165,7 +164,7 @@ $sqlorgao=Selecionar("unidade", $condorgao, $conecta);
           <div class="row justify-content-center">
             <div class="col-10">
               <div class="card table-responsive shadow-lg p-4">
-                <table id="tabelaresultado" class="table table-sm table-striped table-bordered align-middle">
+                <table id="table1" class="table table-sm table-striped table-bordered align-middle">
                   <thead class="text-center">
                     <tr>
                       <th>Ano</th>

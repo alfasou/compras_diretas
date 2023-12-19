@@ -1,3 +1,8 @@
+<?php 
+include_once 'sis/crud.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
   <head>
@@ -12,10 +17,13 @@
     <!-- CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/bootstrap-icons.min.css" rel="stylesheet" />
+   
 
     <!-- SCSS -->
     <link href="css/scss/style.css" rel="stylesheet" />
     <link href="css/scss/tooltip.css" rel="stylesheet" />
+
+
   </head>
 
   <body id="top">
