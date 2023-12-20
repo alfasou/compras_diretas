@@ -85,7 +85,7 @@
                                  row.append('<td>' + obj.processo + '</td>');
                                  row.append('<td><a href="views/detalhe.php&numempenho='+ obj.empenho+'" target="_blank">' + obj.empenho + '</a></td>');
                                  row.append('<td><a href class="tooltip-text" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="MATERIAIS DE CONSUMO: ÁGUA MINERAL GARRAFÃO 20 L - ÁGUA MINERAL DA FONTE, SEM GÁS, ACONDICIONADA EM GARRAFÃO DE 20 L.">' + obj.resumo + '</td>');
-                                 row.append('<td><a href class="tooltip-text" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="&Aacute;REA ADMINISTRATIVA - PA&Ccedil;O E DESCENTRALIZADAS" >' + obj.complementoreduzido + '</a></td>');
+                                 row.append('<td><a href class="tooltip-text" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="&Aacute;REA ADMINISTRATIVA - PA&Ccedil;O E DESCENTRALIZADAS">' + obj.complementoreduzido + '</a></td>');
                                  row.append('<td>' + obj.modalidade + '</td>');
                                  row.append('<td>' + obj.valor + '</td>');
                                  row.append('<td>' + obj.qtd + '</td>');
