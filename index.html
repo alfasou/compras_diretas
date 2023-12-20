@@ -195,22 +195,32 @@
                       <td>20/10/2023</td>
                       <td>SMA</td>
                       <td>PMC.2023.00112543-46</td>
-                      <td><a href="#" target="_blank">H05724/2023</a></td>
-                      <td
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="bottom"
-                        data-bs-custom-class="custom-tooltip"
-                        data-bs-title="MATERIAIS DE CONSUMO: ÁGUA MINERAL GARRAFÃO 20 L - ÁGUA MINERAL DA FONTE, SEM GÁS, ACONDICIONADA EM GARRAFÃO DE 20 L."
-                      >
-                        MATERIAIS DE CONSUMO
+                      <td>
+                        <a href class="numero-empenho" data-bs-toggle="modal" data-bs-target="#modalDetalhes"> H05724/2023 </a>
                       </td>
-                      <td
-                        data-bs-toggle="tooltip"
-                        data-bs-placement="bottom"
-                        data-bs-custom-class="custom-tooltip"
-                        data-bs-title="&Aacute;REA ADMINISTRATIVA - PA&Ccedil;O E DESCENTRALIZADAS"
-                      >
-                        &Aacute;REA ADMINISTRATIVA
+                      <td>
+                        <a
+                          href
+                          class="tooltip-text"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          data-bs-custom-class="custom-tooltip"
+                          data-bs-title="MATERIAIS DE CONSUMO: ÁGUA MINERAL GARRAFÃO 20 L - ÁGUA MINERAL DA FONTE, SEM GÁS, ACONDICIONADA EM GARRAFÃO DE 20 L."
+                        >
+                          MATERIAIS DE CONSUMO
+                        </a>
+                      </td>
+                      <td>
+                        <a
+                          href
+                          class="tooltip-text"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          data-bs-custom-class="custom-tooltip"
+                          data-bs-title="&Aacute;REA ADMINISTRATIVA - PA&Ccedil;O E DESCENTRALIZADAS"
+                        >
+                          &Aacute;REA ADMINISTRATIVA
+                        </a>
                       </td>
                       <td>N&atilde;o se Aplica</td>
                       <td>R$ 1.380,00</td>
@@ -241,6 +251,34 @@
           </div>
         </div>
       </section>
+
+      <!-- INÍCIO DO MODAL -->
+      <div
+        class="modal fade"
+        id="modalDetalhes"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="modalEmpenho"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modalEmpenho"></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+              <!-- AQUI VAI O CONTEÚDO DO MODAL -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+              <button type="button" class="btn btn-primary">Salvar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FIM DO MODAL -->
     </main>
 
     <footer class="" id="bottom">
@@ -262,6 +300,8 @@
     <!-- JAVASCRIPT -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/tooltip.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/modal-docs.js"></script>
     <script src="js/back-to-top.js"></script>
   </body>
 </html>
