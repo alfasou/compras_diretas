@@ -83,7 +83,7 @@
                                  row.append('<td>' + obj.processo + '</td>');
                                  row.append('<td><a href="views/detalhe.php&numempenho='+ obj.empenho+'" target="_blank">' + obj.empenho + '</a></td>');
                                  row.append('<td>' + obj.resumo + '</td>');
-                                 row.append('<td> <spam data-bs-toggle= "tooltip" data-bs-placement= "bottom" data-bs-custom-class= "custom-tooltip" data-bs-title= "luiz">' + obj.complementoreduzido + '</spam></td>');
+                                 row.append('<td> <a href data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="luiz">' + obj.complementoreduzido + '</a></td>');
                                  row.append('<td>' + obj.modalidade + '</td>');
                                  row.append('<td>' + obj.valor + '</td>');
                                  row.append('<td>' + obj.qtd + '</td>');
