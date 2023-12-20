@@ -83,9 +83,9 @@
                                  row.append('<td>' + obj.data + '</td>');
                                  row.append('<td>' + obj.orgao + '</td>');
                                  row.append('<td>' + obj.processo + '</td>');
-                                 row.append('<td><a href="views/detalhe.php&numempenho='+ obj.empenho+'" target="_blank">' + obj.empenho + '</a></td>');
+                                 row.append('<td><a href class="numero-empenho" data-bs-toggle="modal" data-bs-target="#modalDetalhes">' + obj.empenho + '</a></td>');
                                  row.append('<td>' + obj.resumo + '</td>');
-                                 row.append('<td> <a href data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="luiz">' + obj.complementoreduzido + '</a></td>');
+                                 row.append('<td><a href class="tooltip-text" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="luiz">' + obj.complementoreduzido + '</a></td>');
                                  row.append('<td>' + obj.modalidade + '</td>');
                                  row.append('<td>' + obj.valor + '</td>');
                                  row.append('<td>' + obj.qtd + '</td>');
@@ -95,7 +95,7 @@
                                 $('#tabelaresultado tbody').append(row)})
                                 
                             }
-
+                       
                     });
                 });
             });

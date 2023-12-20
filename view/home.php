@@ -207,3 +207,31 @@ $sqlorgao=Selecionar("unidade", $condorgao, $conecta);
           </div>
         </div>
       </section>
+
+      <!-- INÍCIO DO MODAL -->
+      <div
+        class="modal fade"
+        id="modalDetalhes"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="modalEmpenho"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modalEmpenho"></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+              <!-- AQUI VAI O CONTEÚDO DO MODAL -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+              <button type="button" class="btn btn-primary">Salvar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FIM DO MODAL -->
