@@ -17,12 +17,12 @@
 </footer>
 
 <!-- JAVASCRIPT -->
-<script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/tooltip.js"></script>
 <script src="js/loadingoverlay.min.js"></script>
 <script src="js/modal.js"></script>
 <script src="js/modal-docs.js"></script>
-<script src="js/tooltip.js"></script>
 <script src="js/back-to-top.js"></script>
 <script src="https://cdn.datatables.net/v/bs5/dt-1.13.8/r-2.5.0/datatables.min.js"></script>
 
@@ -83,9 +83,9 @@
                                  row.append('<td>' + obj.data + '</td>');
                                  row.append('<td>' + obj.orgao + '</td>');
                                  row.append('<td>' + obj.processo + '</td>');
-                                 row.append('<td><a href class="numero-empenho" data-bs-toggle="modal" data-bs-target="#modalDetalhes">' + obj.empenho + '</a></td>');
-                                 row.append('<td><a href class="tooltip-text" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="MATERIAIS DE CONSUMO: ÁGUA MINERAL GARRAFÃO 20 L - ÁGUA MINERAL DA FONTE, SEM GÁS, ACONDICIONADA EM GARRAFÃO DE 20 L.">' + obj.resumo + '</td>');
-                                 row.append('<td><a href class="tooltip-text" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="&Aacute;REA ADMINISTRATIVA - PA&Ccedil;O E DESCENTRALIZADAS">' + obj.complementoreduzido + '</a></td>');
+                                 row.append('<td><a href="#" class="numero-empenho" data-bs-toggle="modal" data-bs-target="#modalDetalhes">' + obj.empenho + '</a></td>');
+                                 row.append('<td><a href="#" class="tooltip-text" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="MATERIAIS DE CONSUMO: ÁGUA MINERAL GARRAFÃO 20 L - ÁGUA MINERAL DA FONTE, SEM GÁS, ACONDICIONADA EM GARRAFÃO DE 20 L.">' + obj.resumo + '</a></td>');
+                                 row.append('<td><a href="#" class="tooltip-text" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="&Aacute;REA ADMINISTRATIVA - PA&Ccedil;O E DESCENTRALIZADAS">' + obj.complementoreduzido + '</a></td>');
                                  row.append('<td>' + obj.modalidade + '</td>');
                                  row.append('<td>' + obj.valor + '</td>');
                                  row.append('<td>' + obj.qtd + '</td>');
