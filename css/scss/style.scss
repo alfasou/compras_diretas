@@ -18,6 +18,11 @@ footer a {
   color: $emphasis-color;
 }
 
+.tooltip-text {
+  color: $darker-color;
+  text-decoration: none;
+}
+
 .nav-top .nav-link {
   color: $dark-color;
 }

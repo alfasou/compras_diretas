@@ -100,7 +100,7 @@ $sqlorgao=Selecionar("unidade", $condorgao, $conecta);
 ?>
                       <div class="input-group mb-3">
                         <label class="input-group-text" for="orgao">&Oacute;rg&atilde;o</label>
-                        <select class="form-select" id="orgao" name= "orgao">
+                        <select class="form-select" id="orgao" name="orgao">
                           <?php
                           foreach($sqlorgao[0] as $res):
                             $unidade= $res['nome'];
