@@ -180,9 +180,7 @@ $unidade= $res['nome_gestora'];
                       <th>Un</th>
                     </tr>
                   </thead>
-                  <tbody class="table-group-divider">
-                   
-                  </tbody>
+
                 </table>
                 <nav aria-label="Navega&ccedil;&atilde;o da Pesquisa" class="mt-3">
                   <ul class="pagination justify-content-center">
