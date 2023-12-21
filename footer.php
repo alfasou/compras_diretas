@@ -19,12 +19,8 @@
 <!-- JAVASCRIPT -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/tooltip.js"></script>
-<script src="js/reset-form.js"></script>
+<script src="js/scripts.js"></script>
 <script src="js/loadingoverlay.min.js"></script>
-<script src="js/modal.js"></script>
-<script src="js/modal-docs.js"></script>
-<script src="js/back-to-top.js"></script>
 <script src="https://cdn.datatables.net/v/bs5/dt-1.13.8/r-2.5.0/datatables.min.js"></script>
 
 
