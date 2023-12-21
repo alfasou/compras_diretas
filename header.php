@@ -17,12 +17,7 @@ include_once 'sis/crud.php';
     <!-- CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/bootstrap-icons.min.css" rel="stylesheet" />
-   
-
-    <!-- SCSS -->
     <link href="css/scss/style.css" rel="stylesheet" />
-    <link href="css/scss/tooltip.css" rel="stylesheet" />
-
     <link href="https://cdn.datatables.net/v/bs5/dt-1.13.8/r-2.5.0/datatables.min.css" rel="stylesheet">
  
 
