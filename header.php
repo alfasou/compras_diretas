@@ -32,7 +32,7 @@ include_once 'sis/crud.php';
   </head>
 
   <body id="top">
-    <button onclick="topFunction()" id="bTop" title="Voltar ao topo"><i class="bi bi-arrow-up-circle-fill"></i></button>
+    <button id="bTop" title="Voltar ao topo"><i class="bi bi-arrow-up-circle-fill"></i></button>
 
     <main>
       <nav class="navbar navbar-expand-lg nav-top">

@@ -36,16 +36,17 @@
                     <div class="grid">
                       <div class="input-group mb-3">
                         <span class="input-group-text" required>Processo</span>
-                        <input type="text" id="processo" nome="processo" class="form-control" aria-label="Processo" aria-describedby="processo" />
+                        <input type="text" id="processo" nome="processo" class="form-control" aria-label="Processo" aria-describedby="processo"/>
                       </div>
                       <div class="input-group mb-3">
-                        <span class="input-group-text" >Objeto</span>
-                        <input type="text" id="objeto" name="objeto" class="form-control" aria-label="Objeto" aria-describedby="objeto" />
+                        <span class="input-group-text">Objeto</span>
+                        <input type="text" id="objeto" name="objeto" class="form-control" aria-label="Objeto" aria-describedby="objeto"/>
                       </div>
 
                       <div class="input-group mb-3">
                         <label class="input-group-text" for="mes">M&ecirc;s</label>
                         <select class="form-select" id="mes" name="mes">
+                        <option value="0" label=" " selected> </option>
                         <?php
                         // crio um array com os meses do ano
                               $meses = array(
@@ -80,6 +81,7 @@
                         <div class="input-group mb-3">
                         <label class="input-group-text" for="ano">Ano</label>
                         <select class="form-select" id="ano" name="ano">
+                        <option value="0" label=" " selected> </option>
                         <?php
                         $ano = date("Y");
                         $valor = ($ano - 2015) - 1;
@@ -101,6 +103,7 @@ $sqlorgao=Selecionar("unidade", $condorgao, $conecta);
                       <div class="input-group mb-3">
                         <label class="input-group-text" for="orgao">&Oacute;rg&atilde;o</label>
                         <select class="form-select" id="orgao" name="orgao">
+                        <option value="0" label=" " selected> </option>
                           <?php
                           foreach($sqlorgao[0] as $res):
                             $unidade= $res['nome'];
@@ -108,7 +111,7 @@ $sqlorgao=Selecionar("unidade", $condorgao, $conecta);
 
                 
                           ?>
-                          <option value="<?=$gestora?>" selected><?=mb_strtoupper($unidade, 'UTF-8')?></option>
+                          <option value="<?=$gestora?>"><?=mb_strtoupper($unidade, 'UTF-8')?></option>
 
                           <?php endforeach;?>
                           <!--<option value="sma" selected>Administra&ccedil;&atilde;o</option>
