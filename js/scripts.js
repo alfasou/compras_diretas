@@ -18,7 +18,7 @@ function scrollFunction() {
 
 // Quando o usuário clica no botão a página rola de volta para o topo
 myButton.addEventListener('click', () => {
-  document.body.scrollTop = 0; // Para For Safari
+  document.body.scrollTop = 0; // Para Safari
   document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE e Opera
 });
 
@@ -34,14 +34,6 @@ const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootst
 // INÍCIO SCRIPTS DO MODAL
 
 // Seleciona o Modal
-const myModal = document.getElementById('modalEmpenho');
-const myInput = document.getElementById('myInput');
-
-// Mostra o Modal ao clicar no link
-myModal.addEventListener('shown.bs.modal', () => {
-  myInput.focus();
-});
-
 const modalDetalhes = document.getElementById('modalDetalhes');
 
 if (modalDetalhes) {
