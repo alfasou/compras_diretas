@@ -46,7 +46,7 @@
                       <div class="input-group mb-3">
                         <label class="input-group-text" for="mes">M&ecirc;s</label>
                         <select class="form-select" id="mes" name="mes">
-                        <option value="0" label=" " selected> </option>
+                        <option value=" " label=" " selected> </option>
                         <?php
                         // crio um array com os meses do ano
                               $meses = array(
@@ -81,7 +81,7 @@
                         <div class="input-group mb-3">
                         <label class="input-group-text" for="ano">Ano</label>
                         <select class="form-select" id="ano" name="ano">
-                        <option value="0" label=" " selected> </option>
+                        <option value=" " label=" " selected> </option>
                         <?php
                         $ano = date("Y");
                         $valor = ($ano - 2015) - 1;
@@ -103,7 +103,7 @@ $sqlorgao=Selecionar("unidade", $condorgao, $conecta);
                       <div class="input-group mb-3">
                         <label class="input-group-text" for="orgao">&Oacute;rg&atilde;o</label>
                         <select class="form-select" id="orgao" name="orgao">
-                        <option value="0" label=" " selected> </option>
+                        <option value=" " label=" " selected> </option>
                           <?php
                           foreach($sqlorgao[0] as $res):
                             $unidade= $res['nome'];
