@@ -147,7 +147,7 @@ $sqlorgao=Selecionar("unidade", $condorgao, $conecta);
                 <div class="card-footer text-body-secondary">
                   <div class="my-1 mx-3 d-flex justify-content-end">
                     <button type="submit" id="pesquisar" name="pesquisar" class="btn btn-primary me-3">Pesquisar</button>
-                    <button type="button" class="btn btn-light" onclick="resetForm()">Limpar</button>
+                    <button type="button" id="limpar" name="limpar" class="btn btn-light">Limpar</button>
                   </div>
                 </div>
               </div>
