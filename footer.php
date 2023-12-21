@@ -41,6 +41,9 @@
                         imageColor: "#fff"
                     });
 
+                     // inicializa o Tooltip
+                     $('[data-bs-toggle="tooltip"]').Tooltip();
+
                     let processo;
                     let objeto;
                     let mes;
@@ -93,6 +96,9 @@
 
                                 
                                 $('#tabelaresultado tbody').append(row)})
+
+                                // inicializa o Tooltip novamente após inserir o elemento no DOM
+                                $('[data-bs-toggle="tooltip"]').Tooltip();
                                 
                             }
                        
