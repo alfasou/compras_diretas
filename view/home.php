@@ -4,7 +4,7 @@
             <div class="col-12">
               <h1>
                 <i class="bi bi-bank"></i>
-                <span class="ms-2">Compra Direta</span>
+                <span class="ms-2">Compras Diretas</span>
               </h1>
               <div class="block mt-3"></div>
               <div class="block-line"></div>
