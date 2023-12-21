@@ -32,7 +32,7 @@
                   </h5>
                 </div>
                 <div class="card-body">
-                  <form action="" method="post" class="my-3 mx-3">
+                  <form action="" method="post" class="my-3 mx-3" id="searchForm">
                     <div class="grid">
                       <div class="input-group mb-3">
                         <span class="input-group-text" required>Processo</span>
@@ -147,7 +147,7 @@ $sqlorgao=Selecionar("unidade", $condorgao, $conecta);
                 <div class="card-footer text-body-secondary">
                   <div class="my-1 mx-3 d-flex justify-content-end">
                     <button type="submit" id="pesquisar" name="pesquisar" class="btn btn-primary me-3">Pesquisar</button>
-                    <button type="button" class="btn btn-light">Limpar</button>
+                    <button type="button" class="btn btn-light" onclick="resetForm()">Limpar</button>
                   </div>
                 </div>
               </div>

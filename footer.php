@@ -20,6 +20,7 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/tooltip.js"></script>
+<script src="js/reset-form.js"></script>
 <script src="js/loadingoverlay.min.js"></script>
 <script src="js/modal.js"></script>
 <script src="js/modal-docs.js"></script>

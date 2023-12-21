@@ -82,7 +82,7 @@
                   </h5>
                 </div>
                 <div class="card-body">
-                  <form class="my-3 mx-3">
+                  <form class="my-3 mx-3" id="searchForm">
                     <div class="grid">
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="processo">Processo</span>
@@ -159,7 +159,7 @@
                 <div class="card-footer text-body-secondary">
                   <div class="my-1 mx-3 d-flex justify-content-end">
                     <button type="button" class="btn btn-primary me-3">Pesquisar</button>
-                    <button type="button" class="btn btn-light">Limpar</button>
+                    <button type="button" class="btn btn-light" onclick="resetForm()">Limpar</button>
                   </div>
                 </div>
               </div>
@@ -300,6 +300,7 @@
     <!-- JAVASCRIPT -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/tooltip.js"></script>
+    <script src="js/reset-form.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/modal-docs.js"></script>
     <script src="js/back-to-top.js"></script>
