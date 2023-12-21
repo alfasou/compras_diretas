@@ -1,7 +1,7 @@
       <header>
         <div class="container mb-5">
           <div class="row justify-content-center">
-            <div class="col-10">
+            <div class="col-12">
               <h1>
                 <i class="bi bi-bank"></i>
                 <span class="ms-2">Compra Direta</span>
@@ -11,8 +11,7 @@
 
               <div class="description">
                 <p>
-                As Compras Diretas são feitas através de dispensa de licitação. Neste espaço você consulta a relação dos processos de compras
-                diretas, inexigibilidades e dispensas:
+                Consulte aqui a relação dos processos de compras diretas: inexigibilidades e dispensas.
                 </p>
               </div>
             </div>
@@ -23,7 +22,7 @@
       <section id="busca">
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-10">
+            <div class="col-12">
               <div class="card shadow-lg">
                 <div class="card-header">
                   <h5 class="my-3 mx-3">
@@ -46,7 +45,7 @@
                       <div class="input-group mb-3">
                         <label class="input-group-text" for="mes">M&ecirc;s</label>
                         <select class="form-select" id="mes" name="mes">
-                        <option value="0" label=" " selected> </option>
+                        <option value=" " label=" " selected> </option>
                         <?php
                         // crio um array com os meses do ano
                               $meses = array(
@@ -81,7 +80,7 @@
                         <div class="input-group mb-3">
                         <label class="input-group-text" for="ano">Ano</label>
                         <select class="form-select" id="ano" name="ano">
-                        <option value="0" label=" " selected> </option>
+                        <option value=" " label=" " selected> </option>
                         <?php
                         $ano = date("Y");
                         $valor = ($ano - 2015) - 1;
@@ -103,7 +102,7 @@ $sqlorgao=Selecionar("unidade", $condorgao, $conecta);
                       <div class="input-group mb-3">
                         <label class="input-group-text" for="orgao">&Oacute;rg&atilde;o</label>
                         <select class="form-select" id="orgao" name="orgao">
-                        <option value="0" label=" " selected> </option>
+                        <option value=" " label=" " selected> </option>
                           <?php
                           foreach($sqlorgao[0] as $res):
                             $unidade= $res['nome'];
@@ -166,7 +165,7 @@ $sqlorgao=Selecionar("unidade", $condorgao, $conecta);
       <section id="lista">
         <div class="container my-5">
           <div class="row justify-content-center">
-            <div class="col-10">
+            <div class="col-12">
               <div class="card table-responsive shadow-lg p-4">
                 <table id="tabelaresultado" class="table table-sm table-striped table-bordered align-middle">
                   <thead class="text-center">
