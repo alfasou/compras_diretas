@@ -8,28 +8,33 @@
     <meta name="author" content="Andressa de Faria Souza" />
 
     <title>Compras Diretas - Prefeitura Municipal de Campinas</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico" />
+
     <!-- CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/css/bootstrap-icons.min.css" rel="stylesheet" />
 
     <!-- SCSS -->
-    <link href="css/scss/style.css" rel="stylesheet" />
-    <link href="css/scss/tooltip.css" rel="stylesheet" />
+    <link href="../assets/css/scss/style.css" rel="stylesheet" />
+
+    <!-- DATATABLE -->
+    <link href="../assets/libs/datatable/datatables.min.css" rel="stylesheet" />
   </head>
 
   <body id="top">
-    <button onclick="topFunction()" id="bTop" title="Voltar ao topo"><i class="bi bi-arrow-up-circle-fill"></i></button>
+    <button id="bTop" title="Voltar ao topo"><i class="bi bi-arrow-up-circle-fill"></i></button>
 
     <main>
-      <nav class="navbar navbar-expand-lg nav-top">
-        <div class="container">
+      <nav class="navbar navbar-expand-md nav-top">
+        <div class="container p-0">
           <a class="navbar-brand" href="https://campinas.sp.gov.br">
-            <img src="img/logo_prefeitura.png" alt="Prefeitura Municipal de Campinas" width="250" height="176.122" />
+            <img src="../assets/img/logo_prefeitura.png" alt="Prefeitura Municipal de Campinas" width="250" height="210.79" />
           </a>
 
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-lg-auto me-lg-5">
+            <ul class="navbar-nav ms-lg-auto">
               <li class="nav-item">
                 <a class="nav-link fw-bold" href="https://portal.campinas.sp.gov.br">
                   <i class="bi bi-arrow-90deg-left align-middle"></i>
@@ -51,19 +56,16 @@
       <header>
         <div class="container mb-5">
           <div class="row justify-content-center">
-            <div class="col-10">
+            <div class="col-12">
               <h1>
                 <i class="bi bi-bank"></i>
-                <span class="ms-2">Compra Direta</span>
+                <span class="ms-2">Compras Diretas</span>
               </h1>
               <div class="block mt-3"></div>
               <div class="block-line"></div>
 
               <div class="description">
-                <p>
-                  As Compras Diretas são feitas através de dispensa de licitação. Neste espaço você consulta a relação dos processos de compras
-                  diretas, inexigibilidades e dispensas:
-                </p>
+                <p>Consulte aqui a relação dos processos de compras diretas: inexigibilidades e dispensas.</p>
               </div>
             </div>
           </div>
@@ -73,7 +75,7 @@
       <section id="busca">
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-10">
+            <div class="col-12">
               <div class="card shadow-lg">
                 <div class="card-header">
                   <h5 class="my-3 mx-3">
@@ -82,7 +84,7 @@
                   </h5>
                 </div>
                 <div class="card-body">
-                  <form class="my-3 mx-3">
+                  <form class="my-3 mx-3" id="searchForm">
                     <div class="grid">
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="processo">Processo</span>
@@ -96,7 +98,8 @@
                       <div class="input-group mb-3">
                         <label class="input-group-text" for="mes">M&ecirc;s</label>
                         <select class="form-select" id="mes">
-                          <option value="jan" selected>Janeiro</option>
+                          <option value=" " label=" " selected></option>
+                          <option value="jan">Janeiro</option>
                           <option value="fev">Fevereiro</option>
                           <option value="mar">Mar&ccedil;o</option>
                           <option value="abr">Abril</option>
@@ -113,7 +116,8 @@
                       <div class="input-group mb-3">
                         <label class="input-group-text" for="ano">Ano</label>
                         <select class="form-select" id="ano">
-                          <option value="2023" selected>2023</option>
+                          <option value=" " label=" " selected></option>
+                          <option value="2023">2023</option>
                           <option value="2022">2022</option>
                           <option value="2021">2021</option>
                           <option value="2020">2020</option>
@@ -123,7 +127,8 @@
                       <div class="input-group mb-3">
                         <label class="input-group-text" for="orgao">&Oacute;rg&atilde;o</label>
                         <select class="form-select" id="orgao">
-                          <option value="sma" selected>Administra&ccedil;&atilde;o</option>
+                          <option value=" " label=" " selected></option>
+                          <option value="sma">Administra&ccedil;&atilde;o</option>
                           <option value="smasdh">Assist&ecirc;ncia Social, Pessoa com Defici&ecirc;ncia e Direitos Humanos</option>
                           <option value="smcgp">Chefia de Gabinete do Prefeito</option>
                           <option value="secom">Comunica&ccedil;&atilde;o</option>
@@ -159,7 +164,7 @@
                 <div class="card-footer text-body-secondary">
                   <div class="my-1 mx-3 d-flex justify-content-end">
                     <button type="button" class="btn btn-primary me-3">Pesquisar</button>
-                    <button type="button" class="btn btn-light">Limpar</button>
+                    <button type="button" class="btn btn-light" id="limpar">Limpar</button>
                   </div>
                 </div>
               </div>
@@ -171,7 +176,7 @@
       <section id="lista">
         <div class="container my-5">
           <div class="row justify-content-center">
-            <div class="col-10">
+            <div class="col-12">
               <div class="card table-responsive shadow-lg p-4">
                 <table class="table table-sm table-striped table-bordered align-middle">
                   <thead class="text-center">
@@ -189,14 +194,14 @@
                       <th>Un</th>
                     </tr>
                   </thead>
-                  <tbody class="table-group-divider">
+                  <tbody>
                     <tr>
                       <td>2023</td>
-                      <td>20/10/2023</td>
-                      <td>SMA</td>
+                      <td>20-10-2023</td>
+                      <td>SECRETARIA MUNICIPAL DE ADMINISTRAÇÃO</td>
                       <td>PMC.2023.00112543-46</td>
                       <td>
-                        <a href class="numero-empenho" data-bs-toggle="modal" data-bs-target="#modalDetalhes"> H05724/2023 </a>
+                        <a href data-bs-toggle="modal" data-bs-target="#modalDetalhes">H05724/2023</a>
                       </td>
                       <td>
                         <a
@@ -207,7 +212,7 @@
                           data-bs-custom-class="custom-tooltip"
                           data-bs-title="MATERIAIS DE CONSUMO: ÁGUA MINERAL GARRAFÃO 20 L - ÁGUA MINERAL DA FONTE, SEM GÁS, ACONDICIONADA EM GARRAFÃO DE 20 L."
                         >
-                          MATERIAIS DE CONSUMO
+                          MATERIAIS DE CONSUMO: ÁGUA MINERAL GARRAFÃO 20 L
                         </a>
                       </td>
                       <td>
@@ -217,9 +222,9 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="bottom"
                           data-bs-custom-class="custom-tooltip"
-                          data-bs-title="&Aacute;REA ADMINISTRATIVA - PA&Ccedil;O E DESCENTRALIZADAS"
+                          data-bs-title="&Aacute;REA ADMINISTRATIVA - PA&Ccedil;O E DESCENTRALIZADAS e OUTROS MAIS"
                         >
-                          &Aacute;REA ADMINISTRATIVA
+                          &Aacute;REA ADMINISTRATIVA - PA&Ccedil;O E DESCENTRALIZADAS E OUTROS
                         </a>
                       </td>
                       <td>N&atilde;o se Aplica</td>
@@ -284,7 +289,7 @@
     <footer class="" id="bottom">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-10 my-5">
+          <div class="col-12 my-5">
             <p class="fs-6 text-center">
               2023 <span class="mx-2">&mdash;</span>
               <a href="https://portal.campinas.sp.gov.br/secretaria/administracao" target="_blank" rel="noopener noreferrer"
@@ -298,10 +303,14 @@
     </footer>
 
     <!-- JAVASCRIPT -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/tooltip.js"></script>
-    <script src="js/modal.js"></script>
-    <script src="js/modal-docs.js"></script>
-    <script src="js/back-to-top.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script src="../assets/js/loadingoverlay.min.js"></script>
+
+    <!-- DataTable -->
+    <script src="../assets/libs/datatable/datatables.min.js"></script>
+
+    <script src="../assets/js/consulta-ajax-bd.js"></script>
   </body>
 </html>

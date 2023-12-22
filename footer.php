@@ -3,7 +3,7 @@
 <footer class="" id="bottom">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-10 my-5">
+            <div class="col-12 my-5">
                 <p class="fs-6 text-center">
                     2023 <span class="mx-2">&mdash;</span>
                     <a href="https://portal.campinas.sp.gov.br/secretaria/administracao"
@@ -18,11 +18,8 @@
 <!-- JAVASCRIPT -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/tooltip.js"></script>
+<script src="assets/js/scripts.js"></script>
 <script src="assets/js/loadingoverlay.min.js"></script>
-<script src="assets/js/modal.js"></script>
-<script src="assets/js/modal-docs.js"></script>
-<script src="assets/js/back-to-top.js"></script>
 
 <!-- DataTable -->
 <script src="assets/libs/datatable/datatables.min.js"></script>

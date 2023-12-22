@@ -114,8 +114,8 @@ if ($sqlsel[1] > 0):
             'processo' => $res['num_processo'],
             'empenho' => '<a href="#" class="numero-empenho link" data-bs-toggle="modal" data-bs-target="#modalDetalhes">' . $res['num_empenho'] . '</a>',
             'resumo' => $res['resumo_empenho'],
-            'complemento' => '<span class="tooltip-text" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="' . $res['complemento_item'] . '">' . contarPalavra($res['complemento_item'], 7) . '</span>',
-            'modalidade' => $res['descr_mod_compra'],
+            'complemento' => '<span class="tooltip-text" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="' . $res['complemento_item'] . '">' . contarPalavra($res['complemento_item'], 7) . '</span>',
+            'modalidade' => '<span class="tooltip-text" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="' . $res['descr_mod_compra'] . '">' . contarPalavra($res['descr_mod_compra'], 7) . '</span>',
             'valor' => $res['vl_unitario'],
             'qtd' => $res['qt_recebida'],
             'unidade' => $res['unidade']

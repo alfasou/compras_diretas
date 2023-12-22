@@ -1,19 +1,17 @@
 <header>
     <div class="container mb-5">
         <div class="row justify-content-center">
-            <div class="col-10">
+            <div class="col-12">
                 <h1>
                     <i class="bi bi-bank"></i>
-                    <span class="ms-2">Compra Direta</span>
+                    <span class="ms-2">Compras Diretas</span>
                 </h1>
                 <div class="block mt-3"></div>
                 <div class="block-line"></div>
 
                 <div class="description">
                     <p>
-                        As Compras Diretas são feitas através de dispensa de licitação. Neste
-                        espaço você consulta a relação dos processos de compras diretas,
-                        inexigibilidades e dispensas:
+                    Consulte aqui a relação dos processos de compras diretas: inexigibilidades e dispensas.
                     </p>
                 </div>
             </div>
@@ -24,16 +22,16 @@
 <section id="busca">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-10">
+            <div class="col-12">
                 <div class="card shadow-lg">
                     <div class="card-header">
                         <h5 class="my-3 mx-3">
                             <i class="bi bi-search"></i>
-                            <span class="ms-2"> Busca Avan&ccedil;ada </span>
+                            <span class="ms-2">Busca Avan&ccedil;ada</span>
                         </h5>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post" class="my-3 mx-3">
+                        <form action="" method="post" class="my-3 mx-3" id="searchForm">
                             <div class="grid">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" required>Processo</span>
@@ -49,6 +47,7 @@
                                 <div class="input-group mb-3">
                                     <label class="input-group-text" for="mes">M&ecirc;s</label>
                                     <select class="form-select" id="mes" name="mes">
+                                    <option value=" " label=" " selected> </option>
                                         <?php
                                         // crio uma matriz com os meses do ano
                                         $meses = array(
@@ -85,6 +84,7 @@
                                     <div class="input-group mb-3">
                                         <label class="input-group-text" for="ano">Ano</label>
                                         <select class="form-select" id="ano" name="ano">
+                                        <option value=" " label=" " selected> </option>
                                             <?php
                                             // recupero o ano da data atual do sistema
                                             $ano = date("Y");
@@ -109,6 +109,7 @@
                                     <div class="input-group mb-3">
                                         <label class="input-group-text" for="orgao">&Oacute;rg&atilde;o</label>
                                         <select class="form-select" id="orgao" name="orgao">
+                                        <option value=" " label=" " selected> </option>
                                             <?php
                                             foreach ($sqlorgao[0] as $res):
                                                 $unidade = $res['nome'];
@@ -132,7 +133,7 @@
                             <button type="submit" id="pesquisar" name="pesquisar" class="btn btn-primary me-3">
                                 Pesquisar
                             </button>
-                            <button type="button" class="btn btn-light">Limpar</button>
+                            <button type="button" id="limpar" name="limpar" class="btn btn-light">Limpar</button>
                         </div>
                     </div>
                 </div>
@@ -144,7 +145,7 @@
 <section id="lista">
     <div class="container my-5">
         <div class="row justify-content-center">
-            <div class="col-10">
+            <div class="col-12">
                 <div class="card table-responsive shadow-lg p-4">
                     <table id="tabelaresultado" class="table table-sm table-striped table-bordered align-middle">
                         <thead class="text-center">
