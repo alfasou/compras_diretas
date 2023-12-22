@@ -1,0 +1,39 @@
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+
+# todas as páginas
+RewriteRule ^(.*)$ index.php?url=$1
+
+# Permitindo uma quantidade maior de variáveis no $_POST
+php_value max_input_vars 200000
+
+# Aumentar o tempo de execução do script
+php_value max_execution_time 600
+
+# ----------------------------------------------------------------------
+# CORS-enabled images (@crossorigin)
+# ----------------------------------------------------------------------
+# Envio CORS headers se os browsers requisitarem; habilitado por padrão para imagens.
+# developer.mozilla.org/en/CORS_Enabled_Image
+# blog.chromium.org/2011/07/using-cross-domain-images-in-webgl-and.html
+# hacks.mozilla.org/2011/11/using-cors-to-load-webgl-textures-from-cross-domain-images/
+# wiki.mozilla.org/Security/Reviews/crossoriginAttribute
+<IfModule mod_setenvif.c>
+  <IfModule mod_headers.c>
+    # mod_headers, y u no match by Content-Type?!
+    <FilesMatch "\.(gif|png|jpe?g|svg|svgz|ico|webp)$">
+      SetEnvIf Origin ":" IS_CORS
+      Header set Access-Control-Allow-Origin "*" env=IS_CORS
+    </FilesMatch>
+  </IfModule>
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Webfont access
+# ----------------------------------------------------------------------
+<IfModule mod_headers.c>
+  <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css|js)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>

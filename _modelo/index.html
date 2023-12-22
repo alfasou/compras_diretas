@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="P&aacute;gina de consultas das Compras Diretas realizadas pela Prefeitura Municipal de Campinas" />
+    <meta name="author" content="Andressa de Faria Souza" />
+
+    <title>Compras Diretas - Prefeitura Municipal de Campinas</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-icons.min.css" rel="stylesheet" />
+
+    <!-- SCSS -->
+    <link href="css/scss/style.css" rel="stylesheet" />
+    <link href="css/scss/tooltip.css" rel="stylesheet" />
+  </head>
+
+  <body id="top">
+    <button onclick="topFunction()" id="bTop" title="Voltar ao topo"><i class="bi bi-arrow-up-circle-fill"></i></button>
+
+    <main>
+      <nav class="navbar navbar-expand-lg nav-top">
+        <div class="container">
+          <a class="navbar-brand" href="https://campinas.sp.gov.br">
+            <img src="img/logo_prefeitura.png" alt="Prefeitura Municipal de Campinas" width="250" height="176.122" />
+          </a>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto me-lg-5">
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="https://portal.campinas.sp.gov.br">
+                  <i class="bi bi-arrow-90deg-left align-middle"></i>
+                  <span class="mx-2">Voltar ao Portal</span>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="https://transparencia.campinas.sp.gov.br" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-eye align-middle"></i>
+                  <span class="mx-2">Transpar&ecirc;ncia</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <header>
+        <div class="container mb-5">
+          <div class="row justify-content-center">
+            <div class="col-10">
+              <h1>
+                <i class="bi bi-bank"></i>
+                <span class="ms-2">Compra Direta</span>
+              </h1>
+              <div class="block mt-3"></div>
+              <div class="block-line"></div>
+
+              <div class="description">
+                <p>
+                  As Compras Diretas são feitas através de dispensa de licitação. Neste espaço você consulta a relação dos processos de compras
+                  diretas, inexigibilidades e dispensas:
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section id="busca">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-10">
+              <div class="card shadow-lg">
+                <div class="card-header">
+                  <h5 class="my-3 mx-3">
+                    <i class="bi bi-search"></i>
+                    <span class="ms-2"> Busca Avan&ccedil;ada </span>
+                  </h5>
+                </div>
+                <div class="card-body">
+                  <form class="my-3 mx-3">
+                    <div class="grid">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="processo">Processo</span>
+                        <input type="text" class="form-control" aria-label="Processo" aria-describedby="processo" />
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="objeto">Objeto</span>
+                        <input type="text" class="form-control" aria-label="Objeto" aria-describedby="objeto" />
+                      </div>
+
+                      <div class="input-group mb-3">
+                        <label class="input-group-text" for="mes">M&ecirc;s</label>
+                        <select class="form-select" id="mes">
+                          <option value="jan" selected>Janeiro</option>
+                          <option value="fev">Fevereiro</option>
+                          <option value="mar">Mar&ccedil;o</option>
+                          <option value="abr">Abril</option>
+                          <option value="mai">Maio</option>
+                          <option value="jun">Junho</option>
+                          <option value="jul">Julho</option>
+                          <option value="ago">Agosto</option>
+                          <option value="set">Setembro</option>
+                          <option value="out">Outubro</option>
+                          <option value="nov">Novembro</option>
+                          <option value="dez">Dezembro</option>
+                        </select>
+                      </div>
+                      <div class="input-group mb-3">
+                        <label class="input-group-text" for="ano">Ano</label>
+                        <select class="form-select" id="ano">
+                          <option value="2023" selected>2023</option>
+                          <option value="2022">2022</option>
+                          <option value="2021">2021</option>
+                          <option value="2020">2020</option>
+                        </select>
+                      </div>
+
+                      <div class="input-group mb-3">
+                        <label class="input-group-text" for="orgao">&Oacute;rg&atilde;o</label>
+                        <select class="form-select" id="orgao">
+                          <option value="sma" selected>Administra&ccedil;&atilde;o</option>
+                          <option value="smasdh">Assist&ecirc;ncia Social, Pessoa com Defici&ecirc;ncia e Direitos Humanos</option>
+                          <option value="smcgp">Chefia de Gabinete do Prefeito</option>
+                          <option value="secom">Comunica&ccedil;&atilde;o</option>
+                          <option value="secult">Cultura e Turismo</option>
+                          <option value="smdeti">Desenvolvimento Econ&ocirc;mico, Tecnologia e Inova&ccedil;&atilde;o</option>
+                          <option value="sme">Educa&ccedil;&atilde;o</option>
+                          <option value="smel">Esporte e Lazer</option>
+                          <option value="smf">Finan&ccedil;as</option>
+                          <option value="smgc">Gest&atilde;o e Controle</option>
+                          <option value="smgdp">Gest&atilde;o e Desenvolvimento de Pessoas</option>
+                          <option value="sehab">Habita&ccedil;&atilde;o</option>
+                          <option value="seinfra">Infraestrutura</option>
+                          <option value="smj">Justi&ccedil;a</option>
+                          <option value="ouv">Ouvidoria Geral do Munc&iacute;pio</option>
+                          <option value="smpdu">Planejamento e Desenvolvimento Urbano</option>
+                          <option value="smri">Rela&ccedil;&otilde;es Institucionais</option>
+                          <option value="sms">Sa&uacute;de</option>
+                          <option value="smcasp">Seguran&ccedil;a P&uacute;blica</option>
+                          <option value="smsp">Servi&ccedil;os P&uacute;blicos</option>
+                          <option value="smtr">Trabalho e Renda</option>
+                          <option value="setransp">Transportes</option>
+                          <option value="semurb">Urbanismo</option>
+                          <option value="smvds">Verde, Meio Ambiente e Desenvolvimento Sustent&aacute;vel</option>
+                        </select>
+                      </div>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="palavra-chave">Palavra Chave</span>
+                        <input type="text" class="form-control" aria-label="Palavra Chave" aria-describedby="palavra-chave" />
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="card-footer text-body-secondary">
+                  <div class="my-1 mx-3 d-flex justify-content-end">
+                    <button type="button" class="btn btn-primary me-3">Pesquisar</button>
+                    <button type="button" class="btn btn-light">Limpar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="lista">
+        <div class="container my-5">
+          <div class="row justify-content-center">
+            <div class="col-10">
+              <div class="card table-responsive shadow-lg p-4">
+                <table class="table table-sm table-striped table-bordered align-middle">
+                  <thead class="text-center">
+                    <tr>
+                      <th>Ano</th>
+                      <th>Data</th>
+                      <th>&Oacute;rg&atilde;o</th>
+                      <th>Processo</th>
+                      <th>Empenho</th>
+                      <th>Resumo</th>
+                      <th>Complemento</th>
+                      <th>Modalidade</th>
+                      <th>Valor</th>
+                      <th>Qtd</th>
+                      <th>Un</th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-group-divider">
+                    <tr>
+                      <td>2023</td>
+                      <td>20/10/2023</td>
+                      <td>SMA</td>
+                      <td>PMC.2023.00112543-46</td>
+                      <td>
+                        <a href class="numero-empenho" data-bs-toggle="modal" data-bs-target="#modalDetalhes"> H05724/2023 </a>
+                      </td>
+                      <td>
+                        <a
+                          href
+                          class="tooltip-text"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          data-bs-custom-class="custom-tooltip"
+                          data-bs-title="MATERIAIS DE CONSUMO: ÁGUA MINERAL GARRAFÃO 20 L - ÁGUA MINERAL DA FONTE, SEM GÁS, ACONDICIONADA EM GARRAFÃO DE 20 L."
+                        >
+                          MATERIAIS DE CONSUMO
+                        </a>
+                      </td>
+                      <td>
+                        <a
+                          href
+                          class="tooltip-text"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          data-bs-custom-class="custom-tooltip"
+                          data-bs-title="&Aacute;REA ADMINISTRATIVA - PA&Ccedil;O E DESCENTRALIZADAS"
+                        >
+                          &Aacute;REA ADMINISTRATIVA
+                        </a>
+                      </td>
+                      <td>N&atilde;o se Aplica</td>
+                      <td>R$ 1.380,00</td>
+                      <td>1</td>
+                      <td>UN</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <nav aria-label="Navega&ccedil;&atilde;o da Pesquisa" class="mt-3">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Anterior">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Pr&oacute;xima">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INÍCIO DO MODAL -->
+      <div
+        class="modal fade"
+        id="modalDetalhes"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="modalEmpenho"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modalEmpenho"></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+              <!-- AQUI VAI O CONTEÚDO DO MODAL -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+              <button type="button" class="btn btn-primary">Salvar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FIM DO MODAL -->
+    </main>
+
+    <footer class="" id="bottom">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-10 my-5">
+            <p class="fs-6 text-center">
+              2023 <span class="mx-2">&mdash;</span>
+              <a href="https://portal.campinas.sp.gov.br/secretaria/administracao" target="_blank" rel="noopener noreferrer"
+                >Prefeitura de Campinas - SMA</a
+              >
+              &copy; Todos os direitos reservados.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tooltip.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/modal-docs.js"></script>
+    <script src="js/back-to-top.js"></script>
+  </body>
+</html>
