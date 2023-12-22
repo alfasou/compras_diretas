@@ -18,11 +18,11 @@ include_once 'sis/crud.php';
     <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
 
-    <!-- CSS -->
+    <!-- BOOTSTRAP -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="assets/css/bootstrap-icons.min.css" rel="stylesheet"/>
 
-    <!-- SCSS -->
+    <!-- STYLES -->
     <link href="assets/css/scss/style.css" rel="stylesheet"/>
 
     <!-- DATATABLE -->
@@ -30,18 +30,18 @@ include_once 'sis/crud.php';
 </head>
 
 <body id="top">
-<button onclick="topFunction()" id="bTop" title="Voltar ao topo"><i class="bi bi-arrow-up-circle-fill"></i></button>
+<button id="bTop" title="Voltar ao topo"><i class="bi bi-arrow-up-circle-fill"></i></button>
 
 <main>
     <nav class="navbar navbar-expand-lg nav-top">
-        <div class="container">
+        <div class="container p-0">
             <a class="navbar-brand" href="https://campinas.sp.gov.br">
                 <img src="assets/img/logo_prefeitura.png" alt="Prefeitura Municipal de Campinas" width="250"
-                     height="176.122"/>
+                     height="210.79"/>
             </a>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-lg-auto me-lg-5">
+                <ul class="navbar-nav ms-lg-auto">
                     <li class="nav-item">
                         <a class="nav-link fw-bold" href="https://portal.campinas.sp.gov.br">
                             <i class="bi bi-arrow-90deg-left align-middle"></i>

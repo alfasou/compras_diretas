@@ -1,4 +1,5 @@
 // VARIABLES
+$light-secondary-color: #0d6efd;
 $dark-color: #0e0e5c;
 $emphasis-color: gold;
 $dark-emphasis-color: goldenrod;
@@ -14,6 +15,14 @@ body {
 }
 
 // LINK
+.link {
+  text-decoration: none;
+  color: $light-secondary-color !important;
+}
+.link:hover {
+  text-decoration: underline;
+}
+
 footer a {
   color: $emphasis-color;
 }
@@ -50,6 +59,7 @@ NAV .nav-top {
 
 // FORM
 .grid {
+  -moz-columns: 2 !important;
   columns: 2 !important;
 }
 
@@ -70,6 +80,7 @@ NAV .nav-top {
 
 @media screen and (max-width: 1000px) {
   .grid {
+    -moz-columns: 1 !important;
     columns: 1 !important;
   }
 }
@@ -77,14 +88,35 @@ NAV .nav-top {
 // TABLE
 tbody {
   font-size: small;
+  border-top: 2px solid $emphasis-color;
 }
 
-tr [data-bs-toggle='tooltip'] {
+td [data-bs-toggle='tooltip'] {
   cursor: pointer;
 }
 
-.table-group-divider {
-  border-top: 2px solid $emphasis-color;
+th,
+td {
+  min-width: 45px;
+}
+
+th:nth-child(2),
+td:nth-child(2),
+th:nth-child(9),
+td:nth-child(9) {
+  min-width: 80px;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  min-width: 150px;
+}
+
+th:nth-child(6),
+td:nth-child(6),
+th:nth-child(7),
+td:nth-child(7) {
+  min-width: 250px;
 }
 
 // BOTAO TOP
@@ -106,7 +138,7 @@ tr [data-bs-toggle='tooltip'] {
 }
 
 #bTop:hover {
-  color: goldenrod;
+  color: $dark-emphasis-color;
 }
 
 // TOOLTIP
