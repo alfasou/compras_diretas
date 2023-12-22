@@ -3,6 +3,14 @@ body {
   font-family: "Roboto", Helvetica, sans-serif;
 }
 
+.link {
+  text-decoration: none;
+  color: #0d6efd !important;
+}
+.link:hover {
+  text-decoration: underline;
+}
+
 footer a {
   color: gold;
 }
@@ -66,32 +74,8 @@ tbody {
   font-size: small;
 }
 
-td [data-bs-toggle=tooltip] {
+tr [data-bs-toggle=tooltip] {
   cursor: pointer;
-}
-
-th,
-td {
-  min-width: 45px;
-}
-
-th:nth-child(2),
-td:nth-child(2),
-th:nth-child(9),
-td:nth-child(9) {
-  min-width: 80px;
-}
-
-th:nth-child(4),
-td:nth-child(4) {
-  min-width: 150px;
-}
-
-th:nth-child(6),
-td:nth-child(6),
-th:nth-child(7),
-td:nth-child(7) {
-  min-width: 250px;
 }
 
 .table-group-divider {

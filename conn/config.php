@@ -16,7 +16,7 @@ try{
     echo 'Erro ao conectar '.$error_conecta->getMessage();
 
     // redireciono para a página de problemas de conexão
-    echo "<script>location.href='index-500.php';</script>";
+    echo "<script>location.href='view/500.php';</script>";
     
 
 }

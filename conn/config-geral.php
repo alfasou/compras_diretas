@@ -16,6 +16,14 @@ define('APP_BASE', 'http://172.17.13.128/prefeitura/compras_diretas/'); // homol
 
 
 /*
+ * TABELAS
+ */
+
+define('TAB_ITENS', 'stg_empenho_itens');
+
+
+
+/*
  * DATABASE
  */
 
