@@ -4,8 +4,9 @@
  * BASE URL
  */
 
+// DEFINE A BASE DO SITE  ##############################################################################################
 ###################################################### HOMOLOGAÇÃO #####################################################
-define('APP_BASE', 'localhost/dev/trabalho/homologacao/compras_diretas/'); // homologação
+define('APP_BASE', 'http://172.17.13.128/prefeitura/compras_diretas/'); // homologação
 
 
 ####################################################### PRODUÇÃO #######################################################
@@ -27,10 +28,10 @@ define('TAB_ITENS', 'stg_empenho_itens');
  */
 
 // CONFIGURAÇÕES DO BANCO DE DADOS #####################################################################################
-define('HOST', '');
+define('HOST', '127.17.13.128:3307');
 define('DB', 'compra_direta');
-define('USER', '');
-define('PASS', '');
+define('USER', 'luiz');
+define('PASS', 'luiz2023');
 
 //define('HOST', 'bey.ima.sp.gov.br');
 //define('DB', 'bi_pmc');
