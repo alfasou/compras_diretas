@@ -55,6 +55,10 @@ NAV .nav-top {
   color: black;
 }
 
+.active>.page-link, .page-link.active {
+  background-color: gold !important;
+  border-color: gold !important;
+}
 .btn-primary {
   background-color: #0e0e5c;
   border-color: #0e0e5c;
@@ -73,35 +77,25 @@ NAV .nav-top {
 }
 tbody {
   font-size: small;
-  border-top: 2px solid gold;
 }
 
+thead {
+  border-bottom: 2px solid gold;
+}
 td [data-bs-toggle=tooltip] {
   cursor: pointer;
 }
 
-th,
-td {
-  min-width: 45px;
-}
-
 th:nth-child(2),
-td:nth-child(2),
-th:nth-child(9),
-td:nth-child(9) {
-  min-width: 80px;
+td:nth-child(2)
+{  
+  min-width: 50px;
 }
 
 th:nth-child(4),
-td:nth-child(4) {
-  min-width: 150px;
-}
-
-th:nth-child(6),
-td:nth-child(6),
-th:nth-child(7),
-td:nth-child(7) {
-  min-width: 250px;
+td:nth-child(4)
+{  
+  min-width: 130px;
 }
 
 #bTop {
