@@ -9,10 +9,6 @@
  **********************************************************************/
  include 'formatedstring.php';
  class exFPDF extends FPDF{
-   
-   public function Cell($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link='') {
-      parent::Cell($w, $h, iconv('UTF-8', 'windows-1252', $txt), $border, $ln, $align, $fill, $link);
-      }
 
     public function PageBreak(){
        return $this->PageBreakTrigger;
@@ -384,6 +380,18 @@
          $this->y += $lh*$line['height'];
       }
    }
-   
+
+   public function Footer()
+   {
+       // 1,5cm da borda inferior da página
+       $this->SetY(-15);
+       // fonte = Arial 6
+       $this->SetFont('arial','',6);
+       // texto do rodapé
+       $this->Cell(0,10,iconv('UTF-8', 'windows-1252', 'Fonte: SIM - Sistema de Informações Municipais/AVMB - Consultoria e Assessoria Ltda'),0,0,'L');
+       // número de páginas
+       $this->Cell(0,10,iconv('UTF-8', 'windows-1252', 'Página ' .$this->PageNo(). ' de {nb}'),0,0,'R');
+   }
 }
+
 ?>
