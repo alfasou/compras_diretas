@@ -25,5 +25,8 @@
 <script src="assets/libs/datatable/datatables.min.js"></script>
 <script src="assets/js/consulta-ajax-bd.js"></script>
 
+<!-- Sweet Alert -->
+<script src="assets/js/sweetalert2.min.js"></script>
+
 </body>
 </html>

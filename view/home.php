@@ -1,5 +1,5 @@
 <header>
-    <div class="container mb-5">
+    <div class="container mb-2 sistema">
         <div class="row justify-content-center">
             <div class="col-12">
                 <h1>
@@ -28,6 +28,7 @@
                         <h5 class="my-3 mx-3">
                             <i class="bi bi-search"></i>
                             <span class="ms-2">Busca Avan&ccedil;ada</span>
+                            <span class="ms-3 text-danger fs-6"> (Preencha pelo menos um campo para que seja encontrado algum registro)</span>
                         </h5>
                     </div>
                     <div class="card-body">
@@ -47,7 +48,7 @@
                                 <div class="input-group mb-3">
                                     <label class="input-group-text" for="mes">M&ecirc;s</label>
                                     <select class="form-select" id="mes" name="mes">
-                                    <option value=" " label=" " selected> </option>
+                                    <option value="0" label=" " selected> </option>
                                         <?php
                                         // crio uma matriz com os meses do ano
                                         $meses = array(
@@ -84,11 +85,11 @@
                                     <div class="input-group mb-3">
                                         <label class="input-group-text" for="ano">Ano</label>
                                         <select class="form-select" id="ano" name="ano">
-                                        <option value=" " label=" " selected> </option>
+                                        <option value="0" label=" " selected> </option>
                                             <?php
                                             // recupero o ano da data atual do sistema
                                             $ano = date("Y");
-                                            $valor = ($ano - 2015) - 1;
+                                            $valor = ($ano - (date('Y') - 5) - 1);
                                             ?>
 
                                             <option value="<?= $ano; ?>"><?= $ano; ?></option>
@@ -101,19 +102,22 @@
                                     </div>
 
                                     <?php
-                                    $condorgao = "WHERE status = 1 ";
-                                    $condorgao .= "ORDER BY nome ASC";
+                                    $tab_unidade = TAB_UNIDADE;
+                                    $condorgao = "select distinct(cod_gestora), nome_gestora ";
+                                    $condorgao .= "from {$tab_unidade} ";
+                                    $condorgao .= "where cod_gestora <= '000301000' ";
+                                    $condorgao .= "ORDER BY nome_gestora ASC";
 
-                                    $sqlorgao = Selecionar("unidade", $condorgao, $conecta);
+                                    $sqlorgao = SelecionarFull($condorgao, $conecta);
                                     ?>
                                     <div class="input-group mb-3">
                                         <label class="input-group-text" for="orgao">&Oacute;rg&atilde;o</label>
                                         <select class="form-select" id="orgao" name="orgao">
-                                        <option value=" " label=" " selected> </option>
+                                        <option value="0" label=" " selected> </option>
                                             <?php
                                             foreach ($sqlorgao[0] as $res):
-                                                $unidade = $res['nome'];
-                                                $gestora = $res['id_gestora'];
+                                                $unidade = $res['nome_gestora'];
+                                                $gestora = $res['cod_gestora'];
                                                 ?>
                                                 <option value="<?= $gestora ?>"><?= mb_strtoupper($unidade, 'UTF-8') ?></option>
 
@@ -171,7 +175,7 @@
 </section>
 
 <!-- INÍCIO DO MODAL -->
-<div
+<!--<div
     class="modal fade"
     id="modalDetalhes"
     data-bs-backdrop="static"
@@ -187,12 +191,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
             </div>
             <div class="modal-body">
-                <!-- AQUI VAI O CONTEÚDO DO MODAL -->
+                AQUI VAI O CONTEÚDO DO MODAL
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
             </div>
         </div>
     </div>
-</div>
+</div>-->
 <!-- FIM DO MODAL -->

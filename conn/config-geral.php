@@ -20,6 +20,9 @@ define('APP_BASE', 'http://172.17.13.128/prefeitura/compras_diretas/'); // homol
  */
 
 define('TAB_ITENS', 'stg_empenho_itens');
+define('TAB_EMP_ITENS', 'stg_emp_itens');
+define('TAB_EMPENHOS', 'stg_empenhos');
+define('TAB_UNIDADE', 'stg_mov_final');
 
 
 
@@ -28,13 +31,13 @@ define('TAB_ITENS', 'stg_empenho_itens');
  */
 
 // CONFIGURAÇÕES DO BANCO DE DADOS #####################################################################################
-define('HOST', '127.17.13.128:3307');
-define('DB', 'compra_direta');
-define('USER', 'luiz');
-define('PASS', 'luiz2023');
+//define('HOST', '172.17.13.128');
+//define('DB', 'compras_diretas');
+//define('USER', 'luiz');
+//define('PASS', 'luiz2023');
 
-//define('HOST', 'bey.ima.sp.gov.br');
-//define('DB', 'bi_pmc');
-//define('USER', 'bi_pmc');
-//define('PASS', 'M7I-GIpDEwSe');
-//define('PORT', '5432');
+define('HOST', 'bey.ima.sp.gov.br');
+define('DB', 'bi_pmc');
+define('USER', 'bi_pmc');
+define('PASS', 'M7I-GIpDEwSe');
+define('PORT', '5432');

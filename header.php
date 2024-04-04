@@ -25,8 +25,12 @@ include_once 'sis/crud.php';
     <!-- STYLES -->
     <link href="assets/css/scss/style.css" rel="stylesheet"/>
 
+    <!-- ALERTS -->
+    <link href="assets/css/sweetalert2.min.css" rel="stylesheet"/>
+
     <!-- DATATABLE -->
     <link href="assets/libs/datatable/datatables.min.css" rel="stylesheet">
+
 </head>
 
 <body id="top">

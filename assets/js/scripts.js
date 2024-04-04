@@ -5,21 +5,21 @@ let myButton = document.getElementById('bTop');
 
 // Quando o usuário desce 20px do topo da página, o botão aparece
 window.onscroll = () => {
-  scrollFunction();
+    scrollFunction();
 };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    myButton.style.display = 'block';
-  } else {
-    myButton.style.display = 'none';
-  }
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        myButton.style.display = 'block';
+    } else {
+        myButton.style.display = 'none';
+    }
 }
 
 // Quando o usuário clica no botão a página rola de volta para o topo
 myButton.addEventListener('click', () => {
-  document.body.scrollTop = 0; // Para Safari
-  document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE e Opera
+    document.body.scrollTop = 0; // Para Safari
+    document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE e Opera
 });
 
 // FIM SCRIPTS DO BOTÃO DE VOLTA AO TOPO
@@ -37,16 +37,16 @@ const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootst
 const modalDetalhes = document.getElementById('modalDetalhes');
 
 if (modalDetalhes) {
-  modalDetalhes.addEventListener('show.bs.modal', (event) => {
-    // Seleciona o Número do Empenho do link
-    const modalLink = event.relatedTarget;
+    modalDetalhes.addEventListener('show.bs.modal', (event) => {
+        // Seleciona o Número do Empenho do link
+        const modalLink = event.relatedTarget;
 
-    // Seleciona o título do Modal
-    const modalTitle = modalDetalhes.querySelector('.modal-title');
+        // Seleciona o título do Modal
+        const modalTitle = modalDetalhes.querySelector('.modal-title');
 
-    // Muda o título do Modal para o Número do Empenho
-    modalTitle.textContent = modalLink.textContent;
-  });
+        // Muda o título do Modal para o Número do Empenho
+        modalTitle.textContent = modalLink.textContent;
+    });
 }
 
 // FIM SCRIPTS DO MODAL
@@ -60,7 +60,21 @@ const searchForm = document.getElementById('searchForm');
 
 // Limpa o formulário ao clicar no botão
 btnLimpar.addEventListener('click', () => {
-  searchForm.reset();
+    searchForm.reset();
 });
 
 // FIM SCRIPTS DO BOTÃO LIMPAR FORMULÁRIO
+
+// INÍCIO SCRIPT PARA LIMPAR DATATAVLE
+$(document).ready(function () {
+    $('#limpar').on('click', function (e) {
+        e.preventDefault();
+
+        var table = $('#tabelaresultado').DataTable();
+
+        table.clear();
+        table.destroy();
+    });
+});
+
+// FIM SCRIPT PARA LIMPAR DATATAVLE

@@ -6,14 +6,14 @@ foreach ($_REQUEST as $___opt => $___val):
   $$___opt = $___val;
 endforeach;
 
-if (empty($pag)):
+if (empty($url)):
 	include 'view/home.php';
 	
-elseif (substr($pag, 0, 4)=='http' or substr($pag, 0, 1)=="/" or substr($pag, 0, 1)=="."):
+elseif (substr($url, 0, 4)=='http' or substr($url, 0, 1)=="/" or substr($url, 0, 1)=="."):
     include 'view/404.php';
 
-elseif ( file_exists("view/$pag.php") ):
-    include 'view/$pag.php';
+elseif ( file_exists("view/$url.php") ):
+    include 'view/'.$url.'.php';
     
 else:
     include 'view/404.php';
