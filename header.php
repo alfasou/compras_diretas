@@ -37,11 +37,12 @@ include_once 'sis/crud.php';
 <button id="bTop" title="Voltar ao topo"><i class="bi bi-arrow-up-circle-fill"></i></button>
 
 <main>
-    <nav class="navbar navbar-expand-lg nav-top">
+    <nav class="navbar navbar-expand-lg nav-top shadow mb-0 py-0">
         <div class="container p-0">
-            <a class="navbar-brand" href="https://campinas.sp.gov.br">
-                <img src="assets/img/logo_prefeitura.png" alt="Prefeitura Municipal de Campinas" width="250"
-                     height="210.79"/>
+            <a class="navbar-brand ms-2" href="https://campinas.sp.gov.br">
+                <img src="assets/img/brasao-pref.png" alt="Prefeitura Municipal de Campinas" width="32px" height="32px"/>
+                <span class="px-2 navbar-title">Prefeitura Municipal de Campinas</span>
+                <span class="px-2 navbar-title-mobile">Campinas</span>
             </a>
 
             <div class="collapse navbar-collapse" id="navbarNav">

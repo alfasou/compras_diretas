@@ -1,10 +1,11 @@
 </main>
 
-<footer class="" id="bottom">
+<footer class="pb-2" id="bottom">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 my-5">
-                <p class="fs-6 text-center">
+            <div class="col-12 mt-4">
+                <div class="block-line-footer my-1"></div>
+                <p class="fs-6 text-center pt-4">
                     2023 <span class="mx-2">&mdash;</span>
                     <a href="https://portal.campinas.sp.gov.br/secretaria/administracao"
                        target="_blank" rel="noopener noreferrer">Prefeitura de Campinas - SMA</a>
