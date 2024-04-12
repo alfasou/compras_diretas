@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <meta name="description"
+          content="P&aacute;gina de consultas das Compras Diretas realizadas pela Prefeitura Municipal de Campinas"/>
+    <meta name="author" content="Andressa de Faria Souza"/>
+
+    <title>Compras Diretas - Prefeitura Municipal de Campinas</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
+
+    <!-- BOOTSTRAP -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="assets/css/bootstrap-icons.min.css" rel="stylesheet"/>
+
+    <!-- STYLES -->
+    <link href="assets/css/scss/style.css" rel="stylesheet"/>
+
+    <!-- ALERTS -->
+    <link href="assets/css/sweetalert2.min.css" rel="stylesheet"/>
+
+    <!-- DATATABLE -->
+    <link href="assets/libs/datatable/datatables.min.css" rel="stylesheet">
+
+</head>
+
+<body id="top">
+<button id="bTop" title="Voltar ao topo"><i class="bi bi-arrow-up-circle-fill"></i></button>
+
+<main>
+    <nav class="navbar navbar-expand-lg nav-top shadow mb-0 py-0">
+        <div class="container p-0">
+            <a class="navbar-brand ms-2" href="https://campinas.sp.gov.br">
+                <img src="assets/img/brasao-pref.png" alt="Prefeitura Municipal de Campinas" width="32px" height="32px"/>
+                <span class="px-2 navbar-title">Prefeitura Municipal de Campinas</span>
+                <span class="px-2 navbar-title-mobile">Campinas</span>
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="https://portal.campinas.sp.gov.br">
+                            <i class="bi bi-arrow-90deg-left align-middle"></i>
+                            <span class="mx-2">Voltar ao Portal</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold" href="https://transparencia.campinas.sp.gov.br" target="_blank"
+                           rel="noopener noreferrer">
+                            <i class="bi bi-eye align-middle"></i>
+                            <span class="mx-2">Transpar&ecirc;ncia</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container mt-0 pt-0 sistema">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h1 class="pt-5" >
+                        <i class="bi bi-bank"></i>
+                        <span class="ms-2">Compras Diretas</span>
+                    </h1>
+                    <div class="block mt-3"></div>
+                    <div class="block-line"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container sistema">
+            <div class="row justify-content-center">
+                <div class="col-12">  
+                    <div class="description">
+                        <p>
+                        Consulte aqui a relação dos processos de compras diretas: inexigibilidades e dispensas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section id="busca">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="card shadow-lg">
+                        <div class="card-header">
+                            <h5 class="my-3 mx-3">
+                                <i class="bi bi-search icon-search"></i>
+                                <span class="ms-2">Busca Avan&ccedil;ada</span>
+                                <span class="ms-3 text-danger fs-6"> (Preencha pelo menos um campo para que seja encontrado algum registro)</span>
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <form action="" method="post" class="my-3 mx-3" id="searchForm">
+                                <div class="grid">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" required>Processo</span>
+                                        <input type="text" id="processo" nome="processo" class="form-control"
+                                               aria-label="Processo" aria-describedby="processo"/>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">Objeto</span>
+                                        <input type="text" id="objeto" name="objeto" class="form-control"
+                                               aria-label="Objeto" aria-describedby="objeto"/>
+                                    </div>
+    
+                                    <div class="input-group mb-3">
+                                        <label class="input-group-text" for="mes">M&ecirc;s</label>
+                                        <select class="form-select" id="mes" name="mes">
+                                        <option value="0" label=" " selected> </option>
+                                            <?php
+                                            // crio uma matriz com os meses do ano
+                                            $meses = array(
+                                                1 => 'JANEIRO',
+                                                2 => 'FEVEREIRO',
+                                                3 => 'MARÇO',
+                                                4 => 'ABRIL',
+                                                5 => 'MAIO',
+                                                6 => 'JUNHO',
+                                                7 => 'JULHO',
+                                                8 => 'AGOSTO',
+                                                9 => 'SETEMBRO',
+                                                10 => 'OUTUBRO',
+                                                11 => 'NOVEMBRO',
+                                                12 => 'DEZEMBRO'
+                                            );
+    
+                                            // recupero o mês da data atual do sistema
+                                            $mes = date("m");
+    
+                                            // laço para preencher o select com os meses do ano
+                                            for ($x = 1; $x <= 12; $x++):
+                                                if ($x < 10):
+                                                    $xx = '0' . $x;
+                                                else:
+                                                    $xx = $x;
+                                                endif;
+    
+                                                echo "<option value=\"{$x}\">{$meses[$x]}</option>";
+                                            endfor;
+                                            ?>
+                                        </select>
+    
+                                        <div class="input-group mb-3">
+                                            <label class="input-group-text" for="ano">Ano</label>
+                                            <select class="form-select" id="ano" name="ano">
+                                            <option value="0" label=" " selected> </option>
+                                                <?php
+                                                // recupero o ano da data atual do sistema
+                                                $ano = date("Y");
+                                                $valor = ($ano - (date('Y') - 5) - 1);
+                                                ?>
+    
+                                                <option value="<?= $ano; ?>"><?= $ano; ?></option>
+    
+                                                <?php for ($y = 0; $y <= $valor; $y++): ?>
+                                                    <?php $ano = $ano - 1; ?>
+                                                    <option value="<?= $ano; ?>"><?= $ano; ?></option>
+                                                <?php endfor; ?>
+                                            </select>
+                                        </div>
+    
+                                        <?php
+                                        $tab_unidade = TAB_UNIDADE;
+                                        $condorgao = "select distinct(cod_gestora), nome_gestora ";
+                                        $condorgao .= "from {$tab_unidade} ";
+                                        $condorgao .= "where cod_gestora <= '000301000' ";
+                                        $condorgao .= "ORDER BY nome_gestora ASC";
+    
+                                        $sqlorgao = SelecionarFull($condorgao, $conecta);
+                                        ?>
+                                        <div class="input-group mb-3">
+                                            <label class="input-group-text" for="orgao">&Oacute;rg&atilde;o</label>
+                                            <select class="form-select" id="orgao" name="orgao">
+                                            <option value="0" label=" " selected> </option>
+                                                <?php
+                                                foreach ($sqlorgao[0] as $res):
+                                                    $unidade = $res['nome_gestora'];
+                                                    $gestora = $res['cod_gestora'];
+                                                    ?>
+                                                    <option value="<?= $gestora ?>"><?= mb_strtoupper($unidade, 'UTF-8') ?></option>
+    
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text">Palavra Chave</span>
+                                            <input type="text" id="palavra-chave" name="palavra-chave" class="form-control"
+                                                   aria-label="Palavra Chave" aria-describedby="palavra-chave"/>
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            <div class="my-1 mx-3 d-flex justify-content-end">
+                                <button type="submit" id="pesquisar" name="pesquisar" class="btn btn-primary me-3">
+                                    Pesquisar
+                                </button>
+                                <button type="button" id="limpar" name="limpar" class="btn btn-light">Limpar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="lista">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="card table-responsive shadow-lg p-4">
+                        <table id="tabelaresultado" class="table table-sm table-striped table-bordered align-middle">
+                            <thead class="text-center">
+                            <tr>
+                                <th>Ano</th>
+                                <th>Data</th>
+                                <th>&Oacute;rg&atilde;o</th>
+                                <th>Processo</th>
+                                <th>Empenho</th>
+                                <th>Resumo</th>
+                                <th>Complemento</th>
+                                <th>Modalidade</th>
+                                <th>Valor</th>
+                                <th>Qtd</th>
+                                <th>Un</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</main>
+
+<footer class="pb-2" id="bottom">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 mt-4">
+                <div class="block-line-footer my-1"></div>
+                <p class="fs-6 text-center pt-4">
+                    2023 <span class="mx-2">&mdash;</span>
+                    <a href="https://portal.campinas.sp.gov.br/secretaria/administracao"
+                       target="_blank" rel="noopener noreferrer">Prefeitura de Campinas - SMA</a>
+                    &copy; Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script src="assets/js/loadingoverlay.min.js"></script>
+
+<!-- DataTable -->
+<script src="assets/libs/datatable/datatables.min.js"></script>
+<script src="assets/js/consulta-ajax-bd.js"></script>
+
+<!-- Sweet Alert -->
+<script src="assets/js/sweetalert2.min.js"></script>
+
+</body>
+</html>
