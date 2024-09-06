@@ -23,7 +23,7 @@ include_once 'sis/crud.php';
     <link href="assets/css/bootstrap-icons.min.css" rel="stylesheet"/>
 
     <!-- STYLES -->
-    <link href="assets/css/scss/style.css" rel="stylesheet"/>
+    <link href="assets/css/style.css" rel="stylesheet"/>
 
     <!-- ALERTS -->
     <link href="assets/css/sweetalert2.min.css" rel="stylesheet"/>
