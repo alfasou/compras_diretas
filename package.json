@@ -1,0 +1,54 @@
+{
+  "name": "compras_diretas",
+  "version": "1.0.0",
+  "description": "Sistema demo para transparência de contratações e aquisições mediante dispensa de licitação da Prefeitura Municipal de Campinas",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky || true",
+    "build:ts": "tsc",
+    "watch:ts": "tsc --watch",
+    "build:css": "sass assets/css/scss:assets/css",
+    "watch:css": "sass --watch assets/css/scss:assets/css",
+    "watch": "concurrently \"npm run watch:ts\" \"npm run watch:css\"",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n/a.git"
+  },
+  "author": "Andressa de Faria Souza, Luiz Henrique Gonzales Novo",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/n/a/issues"
+  },
+  "homepage": "https://github.com/n/a#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "@types/node": "^22.5.4",
+    "concurrently": "^8.2.2",
+    "eslint": "^9.10.0",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.9.0",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.10",
+    "node": "^22.8.0",
+    "prettier": "^3.3.3",
+    "sass": "^1.78.0",
+    "typescript": "^5.5.4"
+  },
+  "overrides": {
+    "eslint": "^9.6.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*": [
+      "npx eslint **/*.ts **/*.js",
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
